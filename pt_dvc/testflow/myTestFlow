@@ -57,7 +57,7 @@ end
 -----------------------------------------------------------------
 testmethodparameters
 tm_1:
-  "command" = "echo \"!!! Hello TestMethod !!!\"";
+  "command" = "echo \"!!! Hello TestMethod !!!\";ps -ef|grep archie";
   "timeout_s" = "0";
 end
 -----------------------------------------------------------------
