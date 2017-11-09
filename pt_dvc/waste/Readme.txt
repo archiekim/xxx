@@ -1,0 +1,1 @@
+This waste directory is the default directory.
