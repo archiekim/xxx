@@ -3,6 +3,8 @@
 	<name>pt_dvc</name>
 	<comment></comment>
 	<projects>
+		<project>HelloWorld</project>
+		<project>HelloWorld2</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
