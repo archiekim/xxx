@@ -1,0 +1,83 @@
+hp93000,timing,0.1
+PCLK 1,1,10,(@)
+CLKR 1,10,10
+DCDT 1,""
+TSUX 1,1
+EQSP TIM,WVT,#9000000234WAVETBL "digTable"
+
+MODECONTEXT "AVI64DIG"
+
+PINS all_D 
+0 "d1:0 r1:X" 0
+1 "d1:1 r1:X" 1
+2 "d1:Z r1:L" A
+3 "d1:Z r1:H" H
+4 "d1:Z r1:X" X
+5 "d1:Z r1:X" Z
+6 "d1:Z r7:ARM" arm
+7 "d1:Z r1:C" C
+
+
+WAVETBL "dftTable"
+
+MODECONTEXT "DEFAULT"
+
+@
+EQSP TIM,EQN,#9000000401EQNSET 1 "digital_AVI64"
+
+MODECONTEXT "AVI64DIG"
+
+EQUATIONS
+
+TIMINGSET 1 "functional"
+period=10
+
+
+PINS all_D 
+d1=0
+r1=0
+r7=0
+
+
+EQNSET 2 "pulseTask"
+
+MODECONTEXT "DEFAULT"
+
+SPECS    # starts the declaration of the specs
+Frequency [MHZ]  # NOTE: no checks are performed on the base of the unit
+
+EQUATIONS
+Tcyc=1000/Frequency
+
+TIMINGSET 1 "pulse_task"
+period=Tcyc   # Note all resource values are in ns
+@
+EQSP TIM,SPS,#9000000402
+
+
+EQNSET 2 "pulseTask"
+
+
+WAVETBL "dftTable"
+
+CHECK all
+
+SPECSET 1 "pulse10ns"
+
+
+# SPECNAME       *****ACTUAL***** *****MINIMUM**** *****MAXIMUM**** UNITS COMMENT
+Frequency        10                                                 [MHZ] 
+
+EQNSET 1 "digital_AVI64"
+
+
+WAVETBL "digTable"
+
+CHECK all
+
+SPECSET 1 "dig10ns"
+
+
+# SPECNAME       *****ACTUAL***** *****MINIMUM**** *****MAXIMUM**** UNITS COMMENT
+@
+NOOP "7.4.1",,,

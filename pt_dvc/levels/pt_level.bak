@@ -1,0 +1,25 @@
+hp93000,level,0.1
+LSUX 1
+EQSP LEV,EQN,#9000000112EQNSET 1 "no_specs"
+MODECONTEXT "AVI64DIG"
+
+LEVELSET 1 "no_specs"
+PINS  all_D 
+vil= 0
+vih= 1
+vol= 0.5
+voh= 0.5
+@
+EQSP LEV,SPS,#9000000132
+
+
+EQNSET 1 "no_specs"
+
+
+
+SPECSET 1 "no_specs"
+
+
+# SPECNAME       *****ACTUAL***** *****MINIMUM**** *****MAXIMUM**** UNITS COMMENT
+@
+NOOP "7.4.1",,,
