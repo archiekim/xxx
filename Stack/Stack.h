@@ -14,12 +14,12 @@ class Stack
    {
       void* data;
       Link* next;
-      void initialize(void* dat, Link* nxt);
+      Link(void* dat, Link* nxt);
    }* head;
 
 public:
-   void initialize();
-   void cleanup();
+   Stack();
+   ~Stack();
    void push(void* dat);
    void* peek();
    void* pop();

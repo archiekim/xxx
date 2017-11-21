@@ -10,14 +10,14 @@
 using namespace std;
 
 const int increment = 100;
-void Stash::initialize(int sz)
+Stash::Stash(int sz)
 {
    size = sz;
    quantity = 0;
    next = 0;
    storage = NULL;
 }
-void Stash::cleanup()
+Stash::~Stash()
 {
    if (storage != NULL)
    {
